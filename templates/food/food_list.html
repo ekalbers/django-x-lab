@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <h1>Food List</h1>
+    <a href="{% url 'food-create' %}" type="button">Create</a>
+    <ul>
+        {% for food in food_list %}
+            <li>{{ food.name }} - {{ food.price }} calories - owner= {{ food.owner }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
